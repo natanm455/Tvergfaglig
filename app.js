@@ -43,7 +43,7 @@ app.use(passport.session());
 
 /////////////// Koble opp mot databasen ///////////////
 
-mongoose.connect("mongodb://localhost:27017/userDB");
+mongoose.connect(`mongodb+srv://natanm455:natan123@cluster0.w5wza.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
 
 /////////////// Passport strategi ///////////////
 
