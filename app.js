@@ -30,7 +30,7 @@ app.use(
 
 app.use(
   session({
-    secret: "our little secret.",
+    secret: "My dirty little secret",
     resave: false,
     saveUninitialized: false,
   })
@@ -48,8 +48,8 @@ mongoose.connect(`mongodb+srv://natanm455:natan123@cluster0.w5wza.mongodb.net/my
 /////////////// Passport strategi ///////////////
 
 const userSchema = new mongoose.Schema({
-  email: String,
-  password: String,
+  email: { type: String, required: true, unique: true },
+	password: { type: String, required: true },
 });
 
 userSchema.plugin(passportLocalMongoose);
